@@ -1,0 +1,19 @@
+projection;
+use draft;
+
+define behavior for ZC_TruckMasterInfo //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _driver { create; }
+}
+
+define behavior for ZC_TruckDriver //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _truck;
+}

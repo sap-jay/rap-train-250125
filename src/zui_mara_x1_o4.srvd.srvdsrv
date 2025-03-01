@@ -1,0 +1,12 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_MARA_X1'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_MARA_X1'
+  }
+}
+define service ZUI_MARA_X1_O4
+  provider contracts odata_v4_ui {
+  expose ZC_MARA_X1 as mara;
+}

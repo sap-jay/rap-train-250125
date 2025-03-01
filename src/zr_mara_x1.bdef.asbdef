@@ -1,0 +1,46 @@
+managed implementation in class ZBP_R_MARA_X1 unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_MARA_X1 alias _mara
+persistent table ZMARA_X1
+draft table ZMARA_X1_D
+etag master Lastchanged
+lock master total etag Lastchanged
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Matnr;
+
+  field ( readonly )
+   Lastchanged,
+   Createdby,
+   Changedby;
+
+  field ( readonly : update )
+   Matnr;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZMARA_X1
+  {
+    Matnr = matnr;
+    Mtart = mtart;
+    Matkl = matkl;
+    Meins = meins;
+    Ersda = ersda;
+    Ernam = ernam;
+    Lastchanged = lastchanged;
+    Createdby = createdby;
+    Changedby = changedby;
+  }
+}

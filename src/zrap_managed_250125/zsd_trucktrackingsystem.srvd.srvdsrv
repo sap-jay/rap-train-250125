@@ -1,0 +1,5 @@
+@EndUserText.label: 'Truck Tracking System'
+define service ZSD_TruckTrackingSystem {
+  expose ZC_TruckMasterInfo as trucks;
+  expose ZC_TruckDriver     as drivers;
+}
