@@ -7,6 +7,7 @@ composition [1..*] of ZR_SalesOrderItem01TP as _sochild
     Erdat,
     Ernam,
     Vkorg,
+    kunnr,
     Vtweg,
     Spart,
     Netwr,

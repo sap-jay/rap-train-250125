@@ -1,0 +1,60 @@
+@Metadata.layer: #CORE
+annotate entity ZC_SalesOrderHeader
+    with 
+{
+  @UI.facet: [
+    { id : 'OrderHeader',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Order Header',
+      position: 10 },
+      
+    { id : 'OrderItems',
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'Order Items',
+      position: 20,
+      targetElement: '_sochild' }
+  ]
+
+  @UI.lineItem:[ { position: 10, label: 'Sales Order Number' } ]
+  @UI.identification: [{ position: 10, label: 'Sales Order Number' }]
+  @UI.selectionField: [{ position: 10 }]
+  Vbeln;
+
+  @UI.lineItem:[ { position: 20, label: 'Order Date' } ]
+  @UI.identification: [{ position: 20 }]
+  Erdat;
+
+  @UI.lineItem:[ { position: 30, label: 'Created By' } ]
+  @UI.identification: [{ position: 30 }]
+  Ernam;
+
+  @UI.lineItem:[ { position: 40, label: 'Sales Organization' } ]
+  @UI.identification: [{ position: 40 }]
+  Vkorg;
+
+  @UI.lineItem:[ { position: 50, label: 'Distribution Channel' } ]
+  @UI.identification: [{ position: 50 }]
+  Vtweg;
+
+  @UI.lineItem:[ { position: 60, label: 'Division' } ]
+  @UI.identification: [{ position: 60 }]
+  Spart;
+
+  @UI.lineItem:[ { position: 70, label: 'Net Value' } ]
+  @UI.identification: [{ position: 70 }]
+  Netwr;
+
+  @UI.lineItem:[ { position: 80, label: 'Currency' } ]
+  @UI.identification: [{ position: 80 }]
+  Waerk;
+
+  @UI.lineItem:[ { position: 90, label: 'Delivery Status' } ]
+  @UI.identification: [{ position: 90 }]
+  Lifsk;
+
+  @UI.lineItem:[ { position: 100, label: 'Status' } ]
+  @UI.identification: [{ position: 100 }]
+  status;
+}

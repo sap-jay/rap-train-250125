@@ -1,0 +1,5 @@
+@EndUserText.label: 'Manage Sales ORders'
+define service ZSD_ManageSalesOrders {
+  expose ZC_SalesOrderHeader as soheader;
+  expose ZC_SalesOrderItem   as soitem;
+}

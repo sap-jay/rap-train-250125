@@ -13,6 +13,7 @@ define view entity ZI_SalesOrderHeader as select from zvbak_250125
     ernam as Ernam,
     vkorg as Vkorg,
     vtweg as Vtweg,
+    kunnr as kunnr,
     spart as Spart,
     @Semantics.amount.currencyCode : 'Waerk'
     netwr as Netwr,

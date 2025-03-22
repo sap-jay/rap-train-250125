@@ -1,0 +1,130 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'BusinessPartnerGen1X', 
+    typeNamePlural: 'BusinessPartnerGen1Xs', 
+    title: {
+      type: #STANDARD, 
+      label: 'BusinessPartnerGen1X', 
+      value: 'Partner'
+    }
+  }, 
+  presentationVariant: [ {
+    sortOrder: [ {
+      by: 'Partner', 
+      direction: #DESC
+    } ], 
+    visualizations: [ {
+      type: #AS_LINEITEM
+    } ]
+  } ]
+}
+annotate view ZC_BusinessPartnerGen1X01TP with
+{
+  @UI.facet: [ {
+    id: 'idBusinessPartnerGen1X', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'BusinessPartnerGen1X', 
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #HIGH, 
+    label: 'Partner'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Partner'
+  } ]
+  Partner;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #HIGH, 
+    label: 'Langu'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Langu'
+  } ]
+  Langu;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #HIGH, 
+    label: 'Currency'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Currency'
+  } ]
+  Currency;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #HIGH, 
+    label: 'Industry'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Industry'
+  } ]
+  Industry;
+  
+  @UI.lineItem: [ {
+    position: 50 , 
+    importance: #HIGH, 
+    label: 'LegalForm'
+  } ]
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'LegalForm'
+  } ]
+  LegalForm;
+  
+  @UI.lineItem: [ {
+    position: 60 , 
+    importance: #HIGH, 
+    label: 'Country'
+  } ]
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Country'
+  } ]
+  Country;
+  
+  @UI.lineItem: [ {
+    position: 70 , 
+    importance: #HIGH, 
+    label: 'Region'
+  } ]
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'Region'
+  } ]
+  Region;
+  
+  @UI.lineItem: [ {
+    position: 80 , 
+    importance: #HIGH, 
+    label: 'Idnumber'
+  } ]
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Idnumber'
+  } ]
+  Idnumber;
+  
+  @UI.hidden: true
+  Locallastchanged;
+  
+  @UI.lineItem: [ {
+    position: 100 , 
+    importance: #HIGH
+  } ]
+  @UI.identification: [ {
+    position: 100 
+  } ]
+  Lastchanged;
+}

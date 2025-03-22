@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_BUT000'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_BUT000'
+  }
+}
+define service ZUI_BUT000_O4 provider contracts odata_v4_ui {
+  expose ZC_BUT000 as gen1;
+}

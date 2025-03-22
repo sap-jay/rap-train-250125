@@ -1,0 +1,148 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'BusinessPartnerBank', 
+    typeNamePlural: 'BusinessPartnerBanks', 
+    title: {
+      type: #STANDARD, 
+      label: 'BusinessPartnerBank', 
+      value: 'BankID'
+    }
+  }, 
+  presentationVariant: [ {
+    sortOrder: [ {
+      by: 'BankID', 
+      direction: #DESC
+    } ], 
+    visualizations: [ {
+      type: #AS_LINEITEM
+    } ]
+  } ]
+}
+annotate view ZC_BusinessPartnerBank01TP with
+{
+  @UI.facet: [ {
+    id: 'idBusinessPartnerBank', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'BusinessPartnerBank', 
+    position: 10 
+  }, 
+  {
+    id: 'idBusinessPartnerBankDetails', 
+    type: #LINEITEM_REFERENCE, 
+    label: 'BusinessPartnerBankDetails', 
+    position: 20 , 
+    targetElement: '_BusinessPartnerBankDetails'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #HIGH, 
+    label: 'Partner'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Partner'
+  } ]
+  Partner;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #HIGH, 
+    label: 'BankID'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'BankID'
+  } ]
+  BankID;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #HIGH, 
+    label: 'BankCtry'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'BankCtry'
+  } ]
+  BankCtry;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #HIGH, 
+    label: 'BankKey'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'BankKey'
+  } ]
+  BankKey;
+  
+  @UI.lineItem: [ {
+    position: 50 , 
+    importance: #HIGH, 
+    label: 'BankAcct'
+  } ]
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'BankAcct'
+  } ]
+  BankAcct;
+  
+  @UI.lineItem: [ {
+    position: 60 , 
+    importance: #HIGH, 
+    label: 'Iban'
+  } ]
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Iban'
+  } ]
+  Iban;
+  
+  @UI.lineItem: [ {
+    position: 70 , 
+    importance: #HIGH, 
+    label: 'SwiftCode'
+  } ]
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'SwiftCode'
+  } ]
+  SwiftCode;
+  
+  @UI.lineItem: [ {
+    position: 80 , 
+    importance: #HIGH, 
+    label: 'ValidFrom'
+  } ]
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'ValidFrom'
+  } ]
+  ValidFrom;
+  
+  @UI.lineItem: [ {
+    position: 90 , 
+    importance: #HIGH, 
+    label: 'ValidTo'
+  } ]
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'ValidTo'
+  } ]
+  ValidTo;
+  
+  @UI.hidden: true
+  Locallastchanged;
+  
+  @UI.lineItem: [ {
+    position: 110 , 
+    importance: #HIGH
+  } ]
+  @UI.identification: [ {
+    position: 110 
+  } ]
+  Lastchanged;
+}

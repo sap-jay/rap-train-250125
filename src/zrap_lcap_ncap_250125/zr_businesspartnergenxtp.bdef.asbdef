@@ -1,0 +1,220 @@
+managed;
+strict ( 2 );
+with draft;
+extensible
+{
+  with additional save;
+  with determinations on modify;
+  with determinations on save;
+  with validations on save;
+}
+define behavior for ZR_BusinessPartnerGenXTP alias BusinessPartnerGenX
+implementation in class ZBP_R_BusinessPartnerGenXTP unique
+persistent table ZBUT000
+extensible
+draft table ZBUSINESSPART00D
+query ZR_BusinessPartnerGenX_D
+etag master Locallastchanged
+lock master total etag Lastchanged
+authorization master( global )
+
+{
+  field ( readonly )
+   Locallastchanged,
+   Lastchanged,
+   Createdby,
+   Changedby;
+
+  field ( readonly : update )
+   Partner;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare extensible;
+
+  mapping for ZBUT000 corresponding extensible
+  {
+    Partner = PARTNER;
+    Type = TYPE;
+    Title = TITLE;
+    NameFirst = NAME_FIRST;
+    NameLast = NAME_LAST;
+    NameOrg1 = NAME_ORG1;
+    NameOrg2 = NAME_ORG2;
+    Searchterm1 = SEARCHTERM1;
+    Searchterm2 = SEARCHTERM2;
+    Birthdate = BIRTHDATE;
+    Grouping = GROUPING;
+    IsPerson = IS_PERSON;
+    Gender = GENDER;
+    Locallastchanged = LOCALLASTCHANGED;
+    Lastchanged = LASTCHANGED;
+    Createdby = CREATEDBY;
+    Changedby = CHANGEDBY;
+  }
+
+  association _BusinessPartnerBank { create; with draft; }
+  association _BusinessPartnerAddressX { create; with draft; }
+  association _BusinessPartnerGen1X { create; with draft; }
+}
+
+define behavior for ZR_BusinessPartnerBank01TP alias BusinessPartnerBank
+implementation in class ZBP_R_BusinessPartnerBank01TP unique
+persistent table ZBUT0BANK
+extensible
+draft table ZBUSINESSPART01D
+etag master Locallastchanged
+lock dependent by _BusinessPartnerGenX
+authorization dependent by _BusinessPartnerGenX
+
+{
+  field ( readonly )
+   Partner,
+   Locallastchanged;
+
+  field ( readonly : update )
+   BankID;
+
+
+  update;
+  delete;
+
+  mapping for ZBUT0BANK corresponding extensible
+  {
+    Partner = PARTNER;
+    BankID = BANKID;
+    BankCtry = BANK_CTRY;
+    BankKey = BANK_KEY;
+    BankAcct = BANK_ACCT;
+    Iban = IBAN;
+    SwiftCode = SWIFT_CODE;
+    ValidFrom = VALID_FROM;
+    ValidTo = VALID_TO;
+    Locallastchanged = LOCALLASTCHANGED;
+    Lastchanged = LASTCHANGED;
+  }
+
+  association _BusinessPartnerGenX { with draft; }
+  association _BusinessPartnerBankDetails { create; with draft; }
+}
+
+define behavior for ZR_BusinessPartnerBankDTP alias BusinessPartnerBankDetails
+implementation in class ZBP_R_BusinessPartnerBankDTP unique
+persistent table ZBUT0BK
+extensible
+draft table ZBUSINESSPART04D
+etag master Locallastchanged
+lock dependent by _BusinessPartnerGenX
+authorization dependent by _BusinessPartnerGenX
+
+{
+  field ( readonly )
+   Partner,
+   BankID,
+   Locallastchanged;
+
+
+  update;
+  delete;
+
+  mapping for ZBUT0BK corresponding extensible
+  {
+    Partner = PARTNER;
+    BankID = BANKID;
+    BankName = BANK_NAME;
+    Branch = BRANCH;
+    Region = REGION;
+    Street = STREET;
+    City = CITY;
+    SwiftCode = SWIFT_CODE;
+    Locallastchanged = LOCALLASTCHANGED;
+    Lastchanged = LASTCHANGED;
+  }
+
+  association _BusinessPartnerBank { with draft; }
+  association _BusinessPartnerGenX { with draft; }
+}
+
+define behavior for ZR_BusinessPartnerAddreTP alias BusinessPartnerAddressX
+implementation in class ZBP_R_BusinessPartnerAddreTP unique
+persistent table ZBUT020
+extensible
+draft table ZBUSINESSPART03D
+etag master Locallastchanged
+lock dependent by _BusinessPartnerGenX
+authorization dependent by _BusinessPartnerGenX
+
+{
+  field ( readonly )
+   Partner,
+   Locallastchanged;
+
+  field ( readonly : update )
+   Addrnumber;
+
+
+  update;
+  delete;
+
+  mapping for ZBUT020 corresponding extensible
+  {
+    Partner = PARTNER;
+    Addrnumber = ADDRNUMBER;
+    ValidFrom = VALID_FROM;
+    ValidTo = VALID_TO;
+    Street = STREET;
+    HouseNum = HOUSE_NUM;
+    PostCode = POST_CODE;
+    City = CITY;
+    Country = COUNTRY;
+    Region = REGION;
+    ZtimeZone = ZTIME_ZONE;
+    AddrType = ADDR_TYPE;
+    Locallastchanged = LOCALLASTCHANGED;
+    Lastchanged = LASTCHANGED;
+  }
+
+  association _BusinessPartnerGenX { with draft; }
+}
+
+define behavior for ZR_BusinessPartnerGen1X01TP alias BusinessPartnerGen1X
+implementation in class ZBP_R_BusinessPartnerGen1X01TP unique
+persistent table ZBUT001
+extensible
+draft table ZBUSINESSPART02D
+etag master Locallastchanged
+lock dependent by _BusinessPartnerGenX
+authorization dependent by _BusinessPartnerGenX
+
+{
+  field ( readonly )
+   Partner,
+   Locallastchanged;
+
+
+  update;
+  delete;
+
+  mapping for ZBUT001 corresponding extensible
+  {
+    Partner = PARTNER;
+    Langu = LANGU;
+    Currency = CURRENCY;
+    Industry = INDUSTRY;
+    LegalForm = LEGAL_FORM;
+    Country = COUNTRY;
+    Region = REGION;
+    Idnumber = IDNUMBER;
+    Locallastchanged = LOCALLASTCHANGED;
+    Lastchanged = LASTCHANGED;
+  }
+
+  association _BusinessPartnerGenX { with draft; }
+}

@@ -1,0 +1,32 @@
+@Metadata.layer: #CORE
+annotate entity ZC_SalesOrderItem
+    with 
+{
+  @UI.facet: [
+    { id : 'OrderItemDetails',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Order Item Details',
+      position: 10 }
+  ]
+
+  @UI.lineItem:[ { position: 10, label: 'Sales Order Number' } ]
+  @UI.identification: [{ position: 10, label: 'Sales Order Number' }]
+  Vbeln;
+
+  @UI.lineItem:[ { position: 20, label: 'Item Number' } ]
+  @UI.identification: [{ position: 20, label: 'Item Number' }]
+  Posnr;
+
+  @UI.lineItem:[ { position: 30, label: 'Material Number' } ]
+  @UI.identification: [{ position: 30, label: 'Material Number' }]
+  Matnr;
+
+  @UI.lineItem:[ { position: 40, label: 'Quantity' } ]
+  @UI.identification: [{ position: 40 }]
+  Kwmeng;
+
+  @UI.lineItem:[ { position: 50, label: 'Unit of Measure' } ]
+  @UI.identification: [{ position: 50 }]
+  Vrkme;
+}

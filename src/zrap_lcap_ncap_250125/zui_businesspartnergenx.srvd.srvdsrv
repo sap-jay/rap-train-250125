@@ -1,0 +1,9 @@
+@AbapCatalog.extensibility.extensible: true
+@ObjectModel.leadingEntity.name: 'ZC_BusinessPartnerGenXTP'
+define service ZUI_BusinessPartnerGenX {
+  expose ZC_BUSINESSPARTNERGENXTP as BusinessPartnerGenX;
+  expose ZC_BUSINESSPARTNERBANK01TP as BusinessPartnerBank;
+  expose ZC_BUSINESSPARTNERBANKDTP as BusinessPartnerBankDetails;
+  expose ZC_BUSINESSPARTNERADDRETP as BusinessPartnerAddressX;
+  expose ZC_BUSINESSPARTNERGEN1X01TP as BusinessPartnerGen1X;
+}

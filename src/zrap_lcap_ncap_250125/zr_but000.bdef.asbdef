@@ -1,0 +1,58 @@
+managed implementation in class ZCL_BP_R_BUT000 unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZR_BUT000 alias gen1
+implementation in class ZCL_BP_R_BUT000 unique
+persistent table ZBUT000
+with additional save
+draft table ZBUT000_D
+etag master Locallastchanged
+lock master total etag Lastchanged
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Partner;
+
+  field ( readonly )
+   Locallastchanged,
+   Lastchanged,
+   Createdby,
+   Changedby;
+
+  field ( readonly : update )
+   Partner;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZBUT000
+  {
+    Partner = partner;
+    Type = type;
+    Title = title;
+    NameFirst = name_first;
+    NameLast = name_last;
+    NameOrg1 = name_org1;
+    NameOrg2 = name_org2;
+    Searchterm1 = searchterm1;
+    Searchterm2 = searchterm2;
+    Birthdate = birthdate;
+    Grouping = grouping;
+    IsPerson = is_person;
+    Gender = gender;
+    Locallastchanged = locallastchanged;
+    Lastchanged = lastchanged;
+    Createdby = createdby;
+    Changedby = changedby;
+  }
+}

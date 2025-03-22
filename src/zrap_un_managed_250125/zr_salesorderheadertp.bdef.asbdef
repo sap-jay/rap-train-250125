@@ -10,7 +10,7 @@ authorization master ( instance )
   create;
   update;
   delete;
-  field ( readonly ) Vbeln;
+  field ( readonly:update ) Vbeln;
   association _sochild { create; }
 
 
@@ -26,6 +26,7 @@ authorization dependent by _soheader
 {
   update;
   delete;
-  field ( readonly ) Vbeln, Posnr;
+  field ( readonly ) Vbeln;
+  field ( readonly : update ) Posnr;
   association _soheader;
 }

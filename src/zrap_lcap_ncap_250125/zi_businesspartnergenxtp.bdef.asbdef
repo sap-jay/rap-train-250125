@@ -1,0 +1,64 @@
+interface;
+extensible;
+use draft;
+use side effects;
+define behavior for ZI_BusinessPartnerGenXTP alias BusinessPartnerGenX
+use etag
+
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+  use association _BusinessPartnerBank { create; with draft; }
+  use association _BusinessPartnerAddressX { create; with draft; }
+  use association _BusinessPartnerGen1X { create; with draft; }
+}
+
+define behavior for ZI_BusinessPartnerBank01TP alias BusinessPartnerBank
+use etag
+
+{
+  use update;
+  use delete;
+
+  use association _BusinessPartnerGenX { with draft; }
+  use association _BusinessPartnerBankDetails { create; with draft; }
+}
+
+define behavior for ZI_BusinessPartnerBankDTP alias BusinessPartnerBankDetails
+use etag
+
+{
+  use update;
+  use delete;
+
+  use association _BusinessPartnerGenX { with draft; }
+  use association _BusinessPartnerBank { with draft; }
+}
+
+define behavior for ZI_BusinessPartnerAddreTP alias BusinessPartnerAddressX
+use etag
+
+{
+  use update;
+  use delete;
+
+  use association _BusinessPartnerGenX { with draft; }
+}
+
+define behavior for ZI_BusinessPartnerGen1X01TP alias BusinessPartnerGen1X
+use etag
+
+{
+  use update;
+  use delete;
+
+  use association _BusinessPartnerGenX { with draft; }
+}

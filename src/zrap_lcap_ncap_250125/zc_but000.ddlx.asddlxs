@@ -1,0 +1,195 @@
+@Metadata.layer: #CORE
+@UI.headerInfo.title.type: #STANDARD
+@UI.headerInfo.title.value: 'Partner'
+@UI.headerInfo.description.type: #STANDARD
+@UI.headerInfo.description.value: 'Partner'
+annotate view ZC_BUT000 with
+{
+  @EndUserText.label: 'Partner'
+  @UI.facet: [ {
+    label: 'General Information', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10 , 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Partner'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    label: 'Partner'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  Partner;
+  
+  @EndUserText.label: 'Type'
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Type'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 , 
+    label: 'Type'
+  } ]
+  @UI.selectionField: [ {
+    position: 20 
+  } ]
+  Type;
+  
+  @EndUserText.label: 'Title'
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Title'
+  } ]
+  @UI.lineItem: [ {
+    position: 30 , 
+    label: 'Title'
+  } ]
+  Title;
+  
+  @EndUserText.label: 'NameFirst'
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'NameFirst'
+  } ]
+  @UI.lineItem: [ {
+    position: 40 , 
+    label: 'NameFirst'
+  } ]
+  NameFirst;
+  
+  @EndUserText.label: 'NameLast'
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'NameLast'
+  } ]
+  @UI.lineItem: [ {
+    position: 50 , 
+    label: 'NameLast'
+  } ]
+  NameLast;
+  
+  @EndUserText.label: 'NameOrg1'
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'NameOrg1'
+  } ]
+  @UI.lineItem: [ {
+    position: 60 , 
+    label: 'NameOrg1'
+  } ]
+  NameOrg1;
+  
+  @EndUserText.label: 'NameOrg2'
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'NameOrg2'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 , 
+    label: 'NameOrg2'
+  } ]
+  NameOrg2;
+  
+  @EndUserText.label: 'Searchterm1'
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Searchterm1'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 , 
+    label: 'Searchterm1'
+  } ]
+  Searchterm1;
+  
+  @EndUserText.label: 'Searchterm2'
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Searchterm2'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 , 
+    label: 'Searchterm2'
+  } ]
+  Searchterm2;
+  
+  @EndUserText.label: 'Birthdate'
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'Birthdate'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 , 
+    label: 'Birthdate'
+  } ]
+  Birthdate;
+  
+  @EndUserText.label: 'Grouping'
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'Grouping'
+  } ]
+  @UI.lineItem: [ {
+    position: 110 , 
+    label: 'Grouping'
+  } ]
+  Grouping;
+  
+  @EndUserText.label: 'IsPerson'
+  @UI.identification: [ {
+    position: 120 , 
+    label: 'IsPerson'
+  } ]
+  @UI.lineItem: [ {
+    position: 120 , 
+    label: 'IsPerson'
+  } ]
+  IsPerson;
+  
+  @EndUserText.label: 'Gender'
+  @UI.identification: [ {
+    position: 130 , 
+    label: 'Gender'
+  } ]
+  @UI.lineItem: [ {
+    position: 130 , 
+    label: 'Gender'
+  } ]
+  Gender;
+  
+  @UI.identification: [ {
+    position: 140 
+  } ]
+  @UI.lineItem: [ {
+    position: 140 
+  } ]
+  Locallastchanged;
+  
+  @UI.identification: [ {
+    position: 150 
+  } ]
+  @UI.lineItem: [ {
+    position: 150 
+  } ]
+  Lastchanged;
+  
+  @UI.identification: [ {
+    position: 160 
+  } ]
+  @UI.lineItem: [ {
+    position: 160 
+  } ]
+  Createdby;
+  
+  @UI.identification: [ {
+    position: 170 
+  } ]
+  @UI.lineItem: [ {
+    position: 170 
+  } ]
+  Changedby;
+}

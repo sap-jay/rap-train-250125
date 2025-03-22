@@ -1,0 +1,213 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'BusinessPartnerGenX', 
+    typeNamePlural: 'BusinessPartnerGenXs', 
+    title: {
+      type: #STANDARD, 
+      label: 'BusinessPartnerGenX', 
+      value: 'Partner'
+    }
+  }, 
+  presentationVariant: [ {
+    sortOrder: [ {
+      by: 'Partner', 
+      direction: #DESC
+    } ], 
+    visualizations: [ {
+      type: #AS_LINEITEM
+    } ]
+  } ]
+}
+annotate view ZC_BusinessPartnerGenXTP with
+{
+  @UI.facet: [ {
+    id: 'idCollection', 
+    type: #COLLECTION, 
+    label: 'BusinessPartnerGenX', 
+    position: 10 
+  }, 
+  {
+    id: 'idIdentification', 
+    parentId: 'idCollection', 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'General Information', 
+    position: 20 
+  }, 
+  {
+    id: 'idBusinessPartnerBank', 
+    type: #LINEITEM_REFERENCE, 
+    label: 'BusinessPartnerBank', 
+    position: 30 , 
+    targetElement: '_BusinessPartnerBank'
+  }, 
+  {
+    id: 'idBusinessPartnerAddressX', 
+    type: #LINEITEM_REFERENCE, 
+    label: 'BusinessPartnerAddressX', 
+    position: 40 , 
+    targetElement: '_BusinessPartnerAddressX'
+  }, 
+  {
+    id: 'idBusinessPartnerGen1X', 
+    type: #LINEITEM_REFERENCE, 
+    label: 'BusinessPartnerGen1X', 
+    position: 50 , 
+    targetElement: '_BusinessPartnerGen1X'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #HIGH, 
+    label: 'Partner'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Partner'
+  } ]
+  @UI.selectionField: [ {
+    position: 10 
+  } ]
+  Partner;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #HIGH, 
+    label: 'Type'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Type'
+  } ]
+  Type;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #HIGH, 
+    label: 'Title'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'Title'
+  } ]
+  Title;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #HIGH, 
+    label: 'NameFirst'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'NameFirst'
+  } ]
+  NameFirst;
+  
+  @UI.lineItem: [ {
+    position: 50 , 
+    importance: #HIGH, 
+    label: 'NameLast'
+  } ]
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'NameLast'
+  } ]
+  NameLast;
+  
+  @UI.lineItem: [ {
+    position: 60 , 
+    importance: #HIGH, 
+    label: 'NameOrg1'
+  } ]
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'NameOrg1'
+  } ]
+  NameOrg1;
+  
+  @UI.lineItem: [ {
+    position: 70 , 
+    importance: #HIGH, 
+    label: 'NameOrg2'
+  } ]
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'NameOrg2'
+  } ]
+  NameOrg2;
+  
+  @UI.lineItem: [ {
+    position: 80 , 
+    importance: #HIGH, 
+    label: 'Searchterm1'
+  } ]
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'Searchterm1'
+  } ]
+  Searchterm1;
+  
+  @UI.lineItem: [ {
+    position: 90 , 
+    importance: #HIGH, 
+    label: 'Searchterm2'
+  } ]
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Searchterm2'
+  } ]
+  Searchterm2;
+  
+  @UI.lineItem: [ {
+    position: 100 , 
+    importance: #HIGH, 
+    label: 'Birthdate'
+  } ]
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'Birthdate'
+  } ]
+  Birthdate;
+  
+  @UI.lineItem: [ {
+    position: 110 , 
+    importance: #HIGH, 
+    label: 'Grouping'
+  } ]
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'Grouping'
+  } ]
+  Grouping;
+  
+  @UI.lineItem: [ {
+    position: 120 , 
+    importance: #HIGH
+  } ]
+  @UI.identification: [ {
+    position: 120 
+  } ]
+  IsPerson;
+  
+  @UI.lineItem: [ {
+    position: 130 , 
+    importance: #HIGH, 
+    label: 'Gender'
+  } ]
+  @UI.identification: [ {
+    position: 130 , 
+    label: 'Gender'
+  } ]
+  Gender;
+  
+  @UI.hidden: true
+  Locallastchanged;
+  
+  @UI.hidden: true
+  Lastchanged;
+  
+  @UI.hidden: true
+  Createdby;
+  
+  @UI.hidden: true
+  Changedby;
+}

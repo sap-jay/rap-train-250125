@@ -1,0 +1,130 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'BusinessPartnerBankDetails', 
+    typeNamePlural: 'BusinessPartnerBankDetailss', 
+    title: {
+      type: #STANDARD, 
+      label: 'BusinessPartnerBankDetails', 
+      value: 'BankID'
+    }
+  }, 
+  presentationVariant: [ {
+    sortOrder: [ {
+      by: 'BankID', 
+      direction: #DESC
+    } ], 
+    visualizations: [ {
+      type: #AS_LINEITEM
+    } ]
+  } ]
+}
+annotate view ZC_BusinessPartnerBankDTP with
+{
+  @UI.facet: [ {
+    id: 'idBusinessPartnerBankDetails', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'BusinessPartnerBankDetails', 
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #HIGH, 
+    label: 'Partner'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Partner'
+  } ]
+  Partner;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #HIGH, 
+    label: 'BankID'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'BankID'
+  } ]
+  BankID;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #HIGH, 
+    label: 'BankName'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'BankName'
+  } ]
+  BankName;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #HIGH, 
+    label: 'Branch'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'Branch'
+  } ]
+  Branch;
+  
+  @UI.lineItem: [ {
+    position: 50 , 
+    importance: #HIGH, 
+    label: 'Region'
+  } ]
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Region'
+  } ]
+  Region;
+  
+  @UI.lineItem: [ {
+    position: 60 , 
+    importance: #HIGH, 
+    label: 'Street'
+  } ]
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'Street'
+  } ]
+  Street;
+  
+  @UI.lineItem: [ {
+    position: 70 , 
+    importance: #HIGH, 
+    label: 'City'
+  } ]
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'City'
+  } ]
+  City;
+  
+  @UI.lineItem: [ {
+    position: 80 , 
+    importance: #HIGH, 
+    label: 'SwiftCode'
+  } ]
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'SwiftCode'
+  } ]
+  SwiftCode;
+  
+  @UI.hidden: true
+  Locallastchanged;
+  
+  @UI.lineItem: [ {
+    position: 100 , 
+    importance: #HIGH
+  } ]
+  @UI.identification: [ {
+    position: 100 
+  } ]
+  Lastchanged;
+}

@@ -1,0 +1,174 @@
+@Metadata.layer: #CUSTOMER
+@UI: {
+  headerInfo: {
+    typeName: 'BusinessPartnerAddressX', 
+    typeNamePlural: 'BusinessPartnerAddressXs', 
+    title: {
+      type: #STANDARD, 
+      label: 'BusinessPartnerAddressX', 
+      value: 'Addrnumber'
+    }
+  }, 
+  presentationVariant: [ {
+    sortOrder: [ {
+      by: 'Addrnumber', 
+      direction: #DESC
+    } ], 
+    visualizations: [ {
+      type: #AS_LINEITEM
+    } ]
+  } ]
+}
+annotate view ZC_BusinessPartnerAddreTP with
+{
+  @UI.facet: [ {
+    id: 'idBusinessPartnerAddressX', 
+    purpose: #STANDARD, 
+    type: #IDENTIFICATION_REFERENCE, 
+    label: 'BusinessPartnerAddressX', 
+    position: 10 
+  } ]
+  @UI.lineItem: [ {
+    position: 10 , 
+    importance: #HIGH, 
+    label: 'Partner'
+  } ]
+  @UI.identification: [ {
+    position: 10 , 
+    label: 'Partner'
+  } ]
+  Partner;
+  
+  @UI.lineItem: [ {
+    position: 20 , 
+    importance: #HIGH, 
+    label: 'Addrnumber'
+  } ]
+  @UI.identification: [ {
+    position: 20 , 
+    label: 'Addrnumber'
+  } ]
+  Addrnumber;
+  
+  @UI.lineItem: [ {
+    position: 30 , 
+    importance: #HIGH, 
+    label: 'ValidFrom'
+  } ]
+  @UI.identification: [ {
+    position: 30 , 
+    label: 'ValidFrom'
+  } ]
+  ValidFrom;
+  
+  @UI.lineItem: [ {
+    position: 40 , 
+    importance: #HIGH, 
+    label: 'ValidTo'
+  } ]
+  @UI.identification: [ {
+    position: 40 , 
+    label: 'ValidTo'
+  } ]
+  ValidTo;
+  
+  @UI.lineItem: [ {
+    position: 50 , 
+    importance: #HIGH, 
+    label: 'Street'
+  } ]
+  @UI.identification: [ {
+    position: 50 , 
+    label: 'Street'
+  } ]
+  Street;
+  
+  @UI.lineItem: [ {
+    position: 60 , 
+    importance: #HIGH, 
+    label: 'HouseNum'
+  } ]
+  @UI.identification: [ {
+    position: 60 , 
+    label: 'HouseNum'
+  } ]
+  HouseNum;
+  
+  @UI.lineItem: [ {
+    position: 70 , 
+    importance: #HIGH, 
+    label: 'PostCode'
+  } ]
+  @UI.identification: [ {
+    position: 70 , 
+    label: 'PostCode'
+  } ]
+  PostCode;
+  
+  @UI.lineItem: [ {
+    position: 80 , 
+    importance: #HIGH, 
+    label: 'City'
+  } ]
+  @UI.identification: [ {
+    position: 80 , 
+    label: 'City'
+  } ]
+  City;
+  
+  @UI.lineItem: [ {
+    position: 90 , 
+    importance: #HIGH, 
+    label: 'Country'
+  } ]
+  @UI.identification: [ {
+    position: 90 , 
+    label: 'Country'
+  } ]
+  Country;
+  
+  @UI.lineItem: [ {
+    position: 100 , 
+    importance: #HIGH, 
+    label: 'Region'
+  } ]
+  @UI.identification: [ {
+    position: 100 , 
+    label: 'Region'
+  } ]
+  Region;
+  
+  @UI.lineItem: [ {
+    position: 110 , 
+    importance: #HIGH, 
+    label: 'ZtimeZone'
+  } ]
+  @UI.identification: [ {
+    position: 110 , 
+    label: 'ZtimeZone'
+  } ]
+  ZtimeZone;
+  
+  @UI.lineItem: [ {
+    position: 120 , 
+    importance: #HIGH, 
+    label: 'AddrType'
+  } ]
+  @UI.identification: [ {
+    position: 120 , 
+    label: 'AddrType'
+  } ]
+  AddrType;
+  
+  @UI.hidden: true
+  Locallastchanged;
+  
+  @UI.lineItem: [ {
+    position: 140 , 
+    importance: #HIGH
+  } ]
+  @UI.identification: [ {
+    position: 140 
+  } ]
+  Lastchanged;
+}
